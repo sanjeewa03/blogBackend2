@@ -34,7 +34,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         System.out.println("in config 2");
         http
                 .httpBasic()
-                .
+                .and()
+                .authorizeRequests()
+                .anyRequest().authenticated();
+    }
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider(){
